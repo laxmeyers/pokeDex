@@ -11,16 +11,30 @@ function _drawPokedex() {
     setHTML('pokedex-body', template)
 }
 
+function _drawPokemon() {
+    if (appState.pokemon) {
+        setHTML('pokemon', appState.pokemon.ActivePokemon)
+    }
+}
+
 export class PokemonsController {
     constructor() {
-        console.log("poke controller");
         this.getPokemons()
         appState.on('pokemons', _drawPokedex)
+        appState.on('pokemon', _drawPokemon)
     }
 
     async getPokemons() {
         try {
             await pokemonsServices.getPokemons()
+        } catch (error) {
+            Pop.error(error)
+        }
+    }
+
+    async setActivePokemon(pokemonName) {
+        try {
+            await pokemonsServices.setActivePokemon(pokemonName)
         } catch (error) {
             Pop.error(error)
         }

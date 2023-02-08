@@ -5,10 +5,15 @@ import { pokeApi } from "./AxiosServices.js"
 
 
 class PokemonsServices {
+    async setActivePokemon(pokemonName) {
+        const res = await pokeApi.get(`/${pokemonName}`)
+        appState.pokemon = new Pokemon(res.data)
+        
+    }
+
     async getPokemons() {
         const res = await pokeApi.get()
         appState.pokemons = res.data.results
-        console.log(appState.pokemons);
     } 
 
 }
