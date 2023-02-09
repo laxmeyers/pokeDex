@@ -23,7 +23,8 @@
           loading="lazy">
         <span class="ms-2">pokeDex</span>
       </a>
-      <button class="btn btn-info" data-bs-toggle="offcanvas" data-bs-target="#pokedex">Pokedex</button>
+      <button class="btn btn-warning" data-bs-toggle="offcanvas" data-bs-target="#pokedex">Pokedex</button>
+      <button class="btn btn-success mx-5" data-bs-toggle="offcanvas" data-bs-target="#myPokedex">My Pokedex</button>
     </nav>
   </header>
   <main class="bg-dark">
@@ -65,6 +66,17 @@
     </div>
     <div class="offcanvas-body" id="pokedex-body">
       <!-- <button class="btn btn-outline-primary fw-bold fs-3 text-center w-100">Fish</button> -->
+    </div>
+  </div>
+
+
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="myPokedex" aria-labelledby="offcanvasExampleLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="myPokedexBody">
+      
     </div>
   </div>
 

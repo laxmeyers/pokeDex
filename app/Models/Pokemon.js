@@ -2,9 +2,9 @@
 
 export class Pokemon {
     constructor(data) {
-        this.id = data.id || null
+        this.id = data.id
         this.name = data.name
-        this.img = data.sprites.front_default
+        this.img = data.img || data.sprites.front_default
         this.weight = data.weight
         this.height = data.height
         this.types = []
